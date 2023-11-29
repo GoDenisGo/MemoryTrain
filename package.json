@@ -1,0 +1,35 @@
+{
+  "name": "memorytrain",
+  "version": "1.0.0",
+  "description": "Short Term Memory Trainer",
+  "main": "main.go",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GoDenisGo/MemoryTrain.git"
+  },
+  "keywords": [
+    "golang",
+    "memory",
+    "trainer"
+  ],
+  "author": "Denis Krasniqi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GoDenisGo/MemoryTrain/issues"
+  },
+  "homepage": "https://github.com/GoDenisGo/MemoryTrain#readme",
+  "devDependencies": {
+    "eslint": "^8.54.0",
+    "eslint-config-portsoc": "^1.0.1"
+  },
+  "eslintConfig": {
+    "extends": "portsoc",
+    "root": true,
+    "env": {
+      "browser": true
+    }
+  }
+}
