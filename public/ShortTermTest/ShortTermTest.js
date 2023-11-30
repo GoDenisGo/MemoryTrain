@@ -1,7 +1,7 @@
+// import { InputField } from '../shadow/answersInputField.js';
+
 // function startGame begins the countdown timer for the Memory Game.
 // TODO: Create game loop.
-// TODO: Implement hideText function to hide the random text.
-// TODO: Implement userAnswers function to receive answers from user.
 // TODO: Implement incrementStage function.
 // Loop back to beginning.
 // TODO: Produce table of results for the user.
@@ -13,11 +13,15 @@ function startGame() {
     setTimeout(() => {
       generateText(2);
     }, 3000);
-    /* hideText();
-    userAnswers();
-    incrementStage();
-    ** loop back to start **
-    results(); */
+    setTimeout(() => {
+      hideRandomText();
+    }, 3000);
+    setTimeout(() => {
+      userAnswers();
+    }, 6000);
+    // incrementStage();
+    // loop back to start
+    // results();
   });
 }
 
@@ -41,11 +45,24 @@ function countDown() {
 // function generateText generates a string of random letters for the user to remember.
 function generateText(length) {
   const randomText = document.createElement('p');
+  randomText.className = 'randomText';
   for (let i = 0; i < length; i++) {
     const character = getRandomInt('A'.codePointAt(0), 'Z'.codePointAt(0) + 1);
     randomText.textContent = randomText.textContent + ' ' + String.fromCodePoint(character);
   }
   document.querySelector('.game').appendChild(randomText);
+}
+
+function hideRandomText() {
+  setTimeout(() => {
+    document.querySelector('.randomText').style.visibility = 'hidden';
+  }, 3000);
+}
+
+// TODO: Retrieve input data from the user and store in memory.
+function userAnswers() {
+  const InputField = document.createElement('input-field');
+  document.querySelector('.game').appendChild(InputField);
 }
 
 // courtesy of MDN Web Docs:
