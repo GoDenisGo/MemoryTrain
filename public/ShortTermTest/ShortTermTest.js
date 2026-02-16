@@ -9,7 +9,7 @@ function startGame() {
   const start = document.querySelector('.start');
   start.addEventListener('click', () => {
     start.style.visibility = 'hidden';
-    countDown();
+    countDown(3);
     setTimeout(() => {
       generateText(2);
     }, 3000);
@@ -25,11 +25,9 @@ function startGame() {
   });
 }
 
-function countDown() {
-  let interval = 2;
+function countDown(i) {
+  let interval = i;
   const timer = document.querySelector('.countdown');
-
-  timer.textContent = 'Starting in 3...';
 
   const counter = setInterval(() => {
     timer.textContent = 'Starting in ' + interval + '...';
@@ -39,7 +37,7 @@ function countDown() {
   setTimeout(() => {
     clearInterval(counter);
     timer.style.visibility = 'hidden';
-  }, 3000);
+  }, 4000);
 }
 
 // function generateText generates a string of random letters for the user to remember.
@@ -69,9 +67,7 @@ function userAnswers() {
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 // remember to pick a max that is one unit larger than the largest value you want to include.
 function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+  return Math.floor(Math.random() * (Math.floor(max) - Math.floor(min)) + min); // The maximum is exclusive and the minimum is inclusive
 }
 
 function pageLoaded() {

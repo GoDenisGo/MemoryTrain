@@ -17,7 +17,6 @@ func main() {
 }
 
 func serveShadow(w http.ResponseWriter, r *http.Request) {
-	fmt.Println(r.URL.Path)
 	if strings.Contains(r.URL.Path, "README.md") {
 		http.NotFound(w, r)
 		return
